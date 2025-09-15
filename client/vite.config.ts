@@ -9,24 +9,19 @@ export default defineConfig({
         outDir: '../dist/extension',
         lib: {
             entry: path.resolve(__dirname, 'src/extension.ts'),
-            formats: ['cjs']
+            formats: ['es']
         },
         rollupOptions: {
             input: path.resolve(__dirname, 'src/extension.ts'),
             output: {
-                format: 'cjs',
+                format: 'es',
                 entryFileNames: 'extension.js'
             },
-            external: [
-                'vscode',
-                'path',
-                'fs',
-                'os',
-                'url',
-                'child_process',
-                'vscode-languageclient'
-            ]
+            external: ['vscode', 'path', 'fs', 'os', 'url', 'child_process', 'vscode-languageclient']
         },
         emptyOutDir: true
+    },
+    optimizeDeps: {
+        include: ['vscode-languageclient/node']
     }
 })

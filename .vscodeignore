@@ -12,6 +12,7 @@
 client/**
 server/**
 webview/**
+patches/**
 
 # 忽略构建配置和 lock 文件
 vite.config.ts

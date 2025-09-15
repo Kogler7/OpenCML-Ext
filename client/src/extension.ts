@@ -144,7 +144,7 @@ export function activate(context: vscode.ExtensionContext) {
     // LSP related code
 
     // The server is implemented in node
-    const serverModule = context.asAbsolutePath(path.join('server', 'out', 'server.js'))
+    const serverModule = context.asAbsolutePath(path.join('server', 'server.js'))
 
     // If the extension is launched in debug mode then the debug server options are used
     // Otherwise the run options are used

@@ -8,7 +8,7 @@ export default defineConfig({
         ssr: true,
         lib: {
             entry: path.resolve(__dirname, 'src/server.ts'),
-            formats: ['cjs'],
+            formats: ['es'],
             fileName: () => 'server.js'
         },
         outDir: path.resolve(__dirname, '../dist/server'),
@@ -16,10 +16,10 @@ export default defineConfig({
         rollupOptions: {
             input: path.resolve(__dirname, 'src/server.ts'),
             output: {
-                format: 'cjs',
+                format: 'es',
                 entryFileNames: 'server.js'
             },
-            external: ['vscode', 'path', 'fs', 'url', 'child_process', 'vscode-languageserver']
+            external: ['vscode', 'path', 'fs', 'url', 'child_process', 'vscode-languageclient']
         }
     }
 })
